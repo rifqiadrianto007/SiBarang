@@ -6,7 +6,7 @@
           <div class="flex items-center justify-center h-12 w-12">
             <img src="{{ asset('img/barang-logo.svg') }}" alt="">
           </div>
-          <span class="font-bold text-2xl">BarangBareng</span>
+          <span class="font-bold text-2xl">SiBarang</span>
         </div>
 
         <!-- Menu Navigasi (Tengah) -->
