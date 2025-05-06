@@ -60,13 +60,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Contoh data, akan digantikan dengan data dari controller -->
+                        @foreach($products as $index => $product)
                         <tr>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">1</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Laptop Asus</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Elektronik</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">15</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Rp 12.000.000</td>
+                            <td class="py-2 px-4 border-b border-gray-200 text-sm">{{ $product['id'] }}</td>
+                            <td class="py-2 px-4 border-b border-gray-200 text-sm">{{ $product['nama'] }}</td>
+                            <td class="py-2 px-4 border-b border-gray-200 text-sm">{{ $product['kategori'] }}</td>
+                            <td class="py-2 px-4 border-b border-gray-200 text-sm">{{ $product['stok'] }}</td>
+                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Rp {{ number_format($product['harga'], 0, ',', '.') }}</td>
                             <td class="py-2 px-4 border-b border-gray-200 text-sm">
                                 <div class="flex space-x-2">
                                     <button class="text-blue-500 hover:text-blue-700">
@@ -78,125 +78,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">2</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Smartphone Samsung</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Elektronik</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">20</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Rp 5.500.000</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-500 hover:text-blue-700">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-500 hover:text-red-700">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">3</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Mouse Wireless</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Aksesoris</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">30</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Rp 250.000</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-500 hover:text-blue-700">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-500 hover:text-red-700">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">4</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Sepeda Motor</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Kendaraan</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">30</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Rp 25.000.000</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-500 hover:text-blue-700">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-500 hover:text-red-700">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">5</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Charger</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Aksesoris</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">30</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Rp 25.000</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-500 hover:text-blue-700">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-500 hover:text-red-700">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">6</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Kipas Angin</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Aksesoris</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">30</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Rp 250.000</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-500 hover:text-blue-700">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-500 hover:text-red-700">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">7</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Kompor Tanam</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Aksesoris</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">27</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Rp 2.500.000</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-500 hover:text-blue-700">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-500 hover:text-red-700">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">8</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Iphone XR</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Elektronik</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">30</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">Rp 7.250.000</td>
-                            <td class="py-2 px-4 border-b border-gray-200 text-sm">
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-500 hover:text-blue-700">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-500 hover:text-red-700">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -204,7 +86,7 @@
             <!-- Pagination -->
             <div class="mt-6 flex justify-between">
                 <div class="text-sm text-gray-500">
-                    Menampilkan 1-10 dari 8 data
+                    Menampilkan 1-{{ count($products) }} dari {{ count($products) }} data
                 </div>
                 <div class="flex space-x-2">
                     <button class="bg-gray-200 px-3 py-1 rounded-md disabled">

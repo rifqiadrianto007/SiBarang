@@ -160,56 +160,22 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
+                            @foreach ($lowStockItems as $item)
                             <tr class="hover:bg-gray-50">
-                                <td class="py-3 px-4">Keyboard Mechanical RGB</td>
+                                <td class="py-3 px-4">{{ $item['produk'] }}</td>
                                 <td class="text-center py-3 px-4">
-                                    <span class="bg-red-100 text-red-800 text-xs font-medium py-1 px-2 rounded-full">3</span>
+                                    <span class="
+                                        text-xs font-medium py-1 px-2 rounded-full
+                                        {{ $item['status'] === 'merah' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800' }}">
+                                        {{ $item['stok'] }}
+                                    </span>
                                 </td>
-                                <td class="text-center py-3 px-4 text-gray-600">10</td>
+                                <td class="text-center py-3 px-4 text-gray-600">{{ $item['minimum'] }}</td>
                                 <td class="text-right py-3 px-4">
                                     <button class="text-blue-600 hover:text-blue-800 font-medium">Pesan</button>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-gray-50">
-                                <td class="py-3 px-4">SSD 256GB</td>
-                                <td class="text-center py-3 px-4">
-                                    <span class="bg-red-100 text-red-800 text-xs font-medium py-1 px-2 rounded-full">2</span>
-                                </td>
-                                <td class="text-center py-3 px-4 text-gray-600">8</td>
-                                <td class="text-right py-3 px-4">
-                                    <button class="text-blue-600 hover:text-blue-800 font-medium">Pesan</button>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-gray-50">
-                                <td class="py-3 px-4">RAM DDR4 8GB</td>
-                                <td class="text-center py-3 px-4">
-                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium py-1 px-2 rounded-full">5</span>
-                                </td>
-                                <td class="text-center py-3 px-4 text-gray-600">5</td>
-                                <td class="text-right py-3 px-4">
-                                    <button class="text-blue-600 hover:text-blue-800 font-medium">Pesan</button>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-gray-50">
-                                <td class="py-3 px-4">Power Supply 600W</td>
-                                <td class="text-center py-3 px-4">
-                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium py-1 px-2 rounded-full">6</span>
-                                </td>
-                                <td class="text-center py-3 px-4 text-gray-600">10</td>
-                                <td class="text-right py-3 px-4">
-                                    <button class="text-blue-600 hover:text-blue-800 font-medium">Pesan</button>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-gray-50">
-                                <td class="py-3 px-4">Webcam HD</td>
-                                <td class="text-center py-3 px-4">
-                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium py-1 px-2 rounded-full">4</span>
-                                </td>
-                                <td class="text-center py-3 px-4 text-gray-600">8</td>
-                                <td class="text-right py-3 px-4">
-                                    <button class="text-blue-600 hover:text-blue-800 font-medium">Pesan</button>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
