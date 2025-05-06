@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>SiBarang</title>
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-</head>
-<body class="bg-gray-100">
-    {{-- navbar --}}
-    <x-navbar />
+@extends('layout.app')
 
+<!-- Main Content -->
+@section('content')
     <div class="container mx-auto px-6 pt-24">
         <div class="flex justify-between items-center mb-6">
             <div class="flex space-x-2">
@@ -96,8 +85,4 @@
             </div>
         </div>
     </div>
-
-    {{-- footer --}}
-    <x-footer />
-</body>
-</html>
+@endsection
