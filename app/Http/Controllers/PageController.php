@@ -11,11 +11,10 @@ class PageController extends Controller
         return view('login');
     }
 
-    public function dashboard(Request $request)
+    public function dashboard()
     {
-        $username = $request->query('username');
-        dd($username);
-        return view('dashboard');
+        $username = session('username');
+        return view('dashboard', compact('username'));
     }
 
     public function profile()
@@ -31,8 +30,7 @@ class PageController extends Controller
     public function submitLogin(Request $request)
     {
         $username = $request->input('username');
-
-        return view('dashboard', compact('username'));
+        session(['username' => $username]);
+        return redirect()->route('dashboard');
     }
 }
-

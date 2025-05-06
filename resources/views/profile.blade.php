@@ -3,81 +3,66 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>barengBarang</title>
+  <title>SiBarang</title>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
-<body>
-    {{-- navbar --}}
-    <x-navbar />
+<body class="bg-gray-100">
+<!-- Navbar -->
+<x-navbar />
 
-     <!-- Main Content (Profile) -->
-     <main class="pt-24 pb-16">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white shadow rounded-lg overflow-hidden">
-                <!-- Header dengan sapaan -->
-                <div class="px-6 py-5 border-b border-gray-200 bg-gradient-to-r from-indigo-500 to-purple-600">
-                    <h1 class="text-2xl font-bold text-white">
-                        Hallo, welcome back RIFQI!!!
-                        {{-- {{ explode('@', Auth::user()->email)[0] }} --}}
-                    </h1>
-                </div>
-
-                <!-- Profile content -->
-                <div class="px-6 py-8">
-                    <div class="flex flex-col md:flex-row items-center">
-                        <!-- Avatar -->
-                        <div class="mb-6 md:mb-0 md:mr-8">
-                            <div class="bg-indigo-100 rounded-full h-32 w-32 flex items-center justify-center">
-                                <span class="text-indigo-600 text-5xl">
-                                    {{-- {{ strtoupper(substr(Auth::user()->name, 0, 1)) }} --}}
-                                </span>
+    <!-- Main Content -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        <div class="flex justify-center">
+            <!-- Profile Card -->
+            <div class="w-full md:w-2/3 lg:w-1/2">
+                <div class="bg-white shadow overflow-hidden rounded-lg">
+                    <div class="px-4 py-5 sm:px-6 bg-gray-100 border-b">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">Informasi Pengguna</h3>
+                        <p class="mt-1 max-w-2xl text-sm text-gray-500">Detail profil dan informasi akun Anda</p>
+                    </div>
+                    <div class="flex justify-center py-5">
+                        <div class="relative">
+                            <div class="h-32 w-32 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-user text-blue-500 text-5xl"></i>
                             </div>
-                        </div>
-
-                        <!-- User Info -->
-                        <div class="flex-1">
-                            <div class="mb-6">
-                                <h2 class="text-xl font-semibold text-gray-900 mb-1">Informasi Pengguna</h2>
-                                <div class="h-1 w-24 bg-indigo-500 rounded"></div>
-                            </div>
-
-                            <div class="space-y-4">
-                                <div class="flex flex-col space-y-1">
-                                    <span class="text-sm text-gray-500">Nama Lengkap</span>
-                                    <span class="text-lg font-medium text-gray-900">
-                                        {{-- {{ Auth::user()->name }} --}}
-                                    </span>
-                                </div>
-
-                                <div class="flex flex-col space-y-1">
-                                    <span class="text-sm text-gray-500">Email</span>
-                                    <span class="text-lg font-medium text-gray-900">
-                                        {{-- {{ Auth::user()->name }} --}}
-                                    </span>
-                                </div>
+                            <div class="absolute bottom-0 right-0 h-8 w-8 bg-white rounded-full flex items-center justify-center border border-gray-200">
+                                <button class="text-gray-500 hover:text-gray-700">
+                                    <i class="fas fa-camera"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Logout Button -->
-                    <div class="mt-10 flex justify-center md:justify-end">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                            <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-lg shadow-md transition flex items-center">
-                                <i class="fas fa-sign-out-alt mr-2"></i>
-                                Logout
-                            </button>
-                        </form>
+                    <div class="text-center pb-5">
+                        <h2 class="text-xl font-semibold text-gray-800">Budi Susanto</h2>
+                        <p class="text-gray-500">Admin</p>
+                    </div>
+                    <div class="border-t border-gray-200">
+                        <dl>
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 hover:bg-gray-50">
+                                <dt class="text-sm font-medium text-gray-500">Username</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    Joko Susanto
+                                </dd>
+                            </div>
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 hover:bg-gray-100">
+                                <dt class="text-sm font-medium text-gray-500">Email</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    susanto_joko@gmail.com
+                                </dd>
+                            </div>
+                        </dl>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    {{-- footer --}}
-    <x-footer />
+
+{{-- footer --}}
+<x-footer />
 </body>
+
 </html>
