@@ -63,7 +63,7 @@
                     </div>
 
                     <!-- Logout Button -->
-                    <div class="mt-10 flex justify-center md:justify-end">
+                    {{-- <div class="mt-10 flex justify-center md:justify-end">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-lg shadow-md transition flex items-center">
@@ -71,7 +71,7 @@
                                 Logout
                             </button>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

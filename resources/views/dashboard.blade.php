@@ -19,8 +19,11 @@
   <div class="container mx-auto px-6 pt-24">
 
     <!-- Welcome Message -->
+
     <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-      <h3 class="text-2xl font-bold text-gray-800">Selamat datang, {{ session('username', 'Guest') }}!</h3>
+        @if(request()->has('username'))
+            <span class="text-2xl font-bold text-gray-800">Selamat datang, {{ request()->get('username') }}</span>
+        @endif
     </div>
 
     <!-- Summary Cards -->
@@ -84,9 +87,9 @@
     <div class="bg-white rounded-lg shadow-md p-6">
       <div class="flex justify-between items-center mb-4">
         <h3 class="text-lg font-semibold">Aktivitas Terbaru</h3>
-        <a href="{{ route('logout') }}" class="text-sm text-red-500 hover:text-red-700">
+        {{-- <a href="{{ route('logout') }}" class="text-sm text-red-500 hover:text-red-700">
           <i class="fas fa-sign-out-alt mr-1"></i> Logout
-        </a>
+        </a> --}}
       </div>
       <div class="overflow-x-auto">
         <table class="min-w-full bg-white">

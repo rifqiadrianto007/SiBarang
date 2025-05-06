@@ -15,12 +15,12 @@
         </div>
 
         <!-- User Menu -->
-        <div class="flex items-center space-x-4">
+        {{-- <div class="flex items-center space-x-4">
           <span class="text-sm text-gray-600">{{ session('username', 'Guest') }}</span>
           <a href="{{ route('logout') }}" class="text-sm text-red-500 hover:text-red-700 transition-colors">
             <i class="fas fa-sign-out-alt mr-1"></i> Logout
           </a>
-        </div>
+        </div> --}}
 
       </div>
     </div>
