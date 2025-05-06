@@ -14,7 +14,6 @@
     <x-navbar />
 
     <div class="container mx-auto px-6 pt-24">
-        <!-- Action Buttons -->
         <div class="flex justify-between items-center mb-6">
             <div class="flex space-x-2">
                 <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">
@@ -32,7 +31,6 @@
             </div>
         </div>
 
-        <!-- Display Options -->
         <div class="bg-white rounded-lg shadow-md p-6 mb-6">
             <div class="flex justify-between items-center mb-4">
                 <h3 class="text-lg font-semibold">Daftar Barang</h3>
@@ -46,7 +44,6 @@
                 </div>
             </div>
 
-            <!-- Table Display -->
             <div class="overflow-x-auto">
                 <table class="min-w-full bg-white">
                     <thead>
@@ -83,7 +80,6 @@
                 </table>
             </div>
 
-            <!-- Pagination -->
             <div class="mt-6 flex justify-between">
                 <div class="text-sm text-gray-500">
                     Menampilkan 1-{{ count($products) }} dari {{ count($products) }} data

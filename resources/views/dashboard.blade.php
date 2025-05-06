@@ -15,7 +15,6 @@
 
     <!-- Main Content -->
     <div class="pt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <!-- Header with welcome message -->
         <div class="mb-6 bg-white rounded-lg shadow-sm p-4">
             <div>
                 @if(session('username'))
@@ -24,11 +23,8 @@
             </div>
         </div>
 
-        <!-- Dashboard Summary Section -->
         <div class="mb-8">
             <h2 class="text-lg font-semibold text-gray-800 mb-4">Ringkasan Inventori</h2>
-
-            <!-- Statistics Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-lg shadow-md p-5 border-l-4 border-blue-500 hover:shadow-lg transition duration-300">
                     <div class="flex items-center justify-between">
@@ -86,7 +82,6 @@
             </div>
         </div>
 
-        <!-- Recent Activities and Stock Alert -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="flex justify-between items-center border-b p-4">

@@ -13,8 +13,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-
-        /* Wave shape styling */
         .wave-shape {
             position: absolute;
             left: 0;
@@ -32,9 +30,7 @@
 
 <body class="bg-[#F7F9FC] min-h-screen flex items-center justify-center p-6">
     <div class="max-w-6xl w-full bg-white rounded-3xl shadow-lg flex flex-col md:flex-row overflow-hidden">
-        <!-- Left side form -->
         <div class="w-full md:w-1/2 p-10 md:px-16 md:py-16 relative">
-            <!-- Header nav -->
             <nav class="flex items-center justify-start space-x-10 mb-16">
                 <div class="flex items-center space-x-2">
                     <div class="w-7 h-7 rounded-full bg-[#2F80ED]"></div>
@@ -42,7 +38,6 @@
                 </div>
             </nav>
 
-            <!-- Form content - properly positioned -->
             <h2 class="text-2xl font-extrabold text-gray-800 mb-2">Login</h2>
             <p class="text-gray-400 text-sm mb-8">Welcome back! Please login to your account.</p>
 
@@ -78,12 +73,10 @@
             </p>
         </div>
 
-        <!-- Right side image with improved wavy shape -->
         <div class="hidden md:block md:w-1/2 relative">
             <img class="w-full h-full object-cover"
                 src="{{ Vite::asset('public/img/loginpic.jpg') }}" alt="warehouse" />
 
-            <!-- Improved wave shape overlay -->
             <svg class="wave-shape" viewBox="0 0 100 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path class="wave-path"
                     d="M0,0 L100,0 C70,100 100,200 70,300 C40,400 70,500 40,600 C10,700 40,800 0,800 Z"></path>

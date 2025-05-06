@@ -16,7 +16,6 @@
     <!-- Main Content -->
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <div class="flex justify-center">
-            <!-- Profile Card -->
             <div class="w-full md:w-2/3 lg:w-1/2">
                 <div class="bg-white shadow overflow-hidden rounded-lg">
                     <div class="px-4 py-5 sm:px-6 bg-gray-100 border-b">
@@ -36,22 +35,17 @@
                         </div>
                     </div>
                     <div class="text-center pb-5">
-                        <h2 class="text-xl font-semibold text-gray-800">Budi Susanto</h2>
-                        <p class="text-gray-500">Admin</p>
+                        @if(session('username'))
+                        <h2 class="text-xl font-semibold text-gray-800">{{ session('username') }}</h2>
+                        @endif
                     </div>
                     <div class="border-t border-gray-200">
                         <dl>
                             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 hover:bg-gray-50">
                                 <dt class="text-sm font-medium text-gray-500">Username</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                    Joko Susanto
-                                </dd>
-                            </div>
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 hover:bg-gray-100">
-                                <dt class="text-sm font-medium text-gray-500">Email</dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                    susanto_joko@gmail.com
-                                </dd>
+                                @if(session('username'))
+                                    <h2 class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ session('username') }}</h2>
+                                @endif
                             </div>
                         </dl>
                     </div>
@@ -59,7 +53,6 @@
             </div>
         </div>
     </div>
-
 
 {{-- footer --}}
 <x-footer />
