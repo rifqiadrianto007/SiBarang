@@ -44,24 +44,36 @@
       <h2 class="text-2xl font-extrabold text-gray-800 mb-2">Login</h2>
       <p class="text-gray-400 text-sm mb-8">Welcome back! Please login to your account.</p>
 
-      <form class="space-y-6">
+      @if(session('error'))
+      <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        {{ session('error') }}
+      </div>
+      @endif
+
+      <form class="space-y-6" method="POST" action="{{ route('login.process') }}">
+        @csrf
         <div>
-          <label class="block text-xs text-gray-400 mb-1" for="username">User Name</label>
-          <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-xs text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-500" id="username" type="email"/>
+          <label class="block text-xs text-gray-400 mb-1" for="email">Email</label>
+          <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-xs text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-500" id="email" name="email" type="email" required/>
+        </div>
+
+        <div>
+          <label class="block text-xs text-gray-400 mb-1" for="username">Username</label>
+          <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-xs text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-500" id="username" name="username" type="text" required/>
         </div>
 
         <div>
           <label class="block text-xs text-gray-400 mb-1" for="password">Password</label>
-          <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-xs text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-500" id="password" type="password"/>
+          <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-xs text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-500" id="password" name="password" type="password" required/>
         </div>
 
         <div class="flex items-center justify-between text-xs text-gray-400 mb-6">
           <button class="text-gray-300 hover:text-gray-400" type="button">Forget Password?</button>
         </div>
 
-        <a href="{{ route('dashboard') }}"
-        class="block text-center w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-md text-sm transition-colors">
-        Login</a>
+        <button type="submit" class="block text-center w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-md text-sm transition-colors">
+          Login
+        </button>
       </form>
 
       <p class="text-xs text-gray-400 mt-6">
